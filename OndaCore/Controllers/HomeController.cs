@@ -15,10 +15,15 @@ namespace OndaCore.Controllers
             return View();
         }
 
+        public IActionResult LeftSidebar()
+        {
+            return PartialView();
+        }
+
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
-
+            ViewBag.ItemName = AxaptaModel.RunserviceOnHandAsync();
             return View();
         }
 

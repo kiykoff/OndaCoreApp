@@ -44,7 +44,8 @@ namespace OndaCore
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                //app.UseExceptionHandler("/Home/Error");
+                app.UseDeveloperExceptionPage();
                 app.UseHsts();
             }
 
