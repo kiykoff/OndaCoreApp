@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using OndaCore.Models;
+using static OndaCore.Models.AxaptaModel;
 
 namespace OndaCore.Controllers
 {
@@ -15,22 +16,20 @@ namespace OndaCore.Controllers
             return View();
         }
 
-        public IActionResult LeftSidebar()
-        {
-            return PartialView();
-        }
-
+        
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
-            ViewBag.ItemName = AxaptaModel.RunserviceOnHandAsync();
+            //ViewBag.Entity = AxaptaModel.RunserviceOnHandAsync();
+            // ViewBag.ItemName = AxaptaModel.RunserviceOnHandAsync();
+
+            ViewBag.SalesId = AxaptaModel.Create();
             return View();
         }
 
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
-
+            ViewBag.Entity = AxaptaModel.RunserviceOnHandAsync();
             return View();
         }
 

@@ -1,11 +1,7 @@
 @import url("font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
 
-/*
-	Arcana by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -78,8 +74,8 @@ input, select, textarea {
 		box-sizing: border-box;
 	}
 
-    a#logo {
-        font-size: 60pt;
+    section .wrapper.style1 {
+        padding-top: 2em;
     }
 
 	*, *:before, *:after {
@@ -2668,10 +2664,10 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		background-image: url("../../images/banner.jpg");
+		background-image: url("../../images/logo.svg");
 		background-position: center center;
-		background-size: cover;
-		height: 28em;
+		background-size:cover;
+        height: 20em;
 		text-align: center;
 		position: relative;
 	}
@@ -2684,7 +2680,7 @@ input, select, textarea {
 			background: #212121;
 			background: rgba(27, 27, 27, 0.75);
 			color: #fff;
-			padding: 1.5em 0;
+			padding: 0.2em 0;
 		}
 
 			#banner header h2 {
@@ -2708,8 +2704,13 @@ input, select, textarea {
 
 			#banner header .button {
 				vertical-align: middle;
-				margin-left: 1em;
+				margin-left: 1.5em;
 			}
+
+    a.image.left {
+
+        outline: 1px solid black;
+    }
 
 /* Wrapper */
 
@@ -2717,8 +2718,9 @@ input, select, textarea {
 		padding: 5em 0 3em 0;
 	}
 
-		.wrapper.style1 {
+		section.wrapper.style1 {
 			background: #fff;
+            
 		}
 
 		.wrapper.style2 {
