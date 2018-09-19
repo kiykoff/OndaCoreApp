@@ -1,20 +1,39 @@
-﻿@{
-    ViewData["Title"] = "Contact";
-}
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+﻿@model PartyTableCustom.AxdDirPartyTableCustom
+    
+@ViewData["Title"] = "Контакты";
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-@foreach (var b in ViewBag.Entity)
-{
-<h1> @b </h1>
-}
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div id="page-wrapper">
+    <h2>@ViewData["Title"]</h2>
+    <h4>@ViewData["Message"]</h4>
+    <img class="img-responsive" src="http://files.etna.com.ru/Source/_Picture/Olfry/Rot/n018684.jpg" />
+    <div class="container">
+        @foreach (PartyTableCustom.AxdEntity_DirPartyTable a in Model.DirPartyTable)
+        {
+
+            <div class="row" id="employee">
+                <div class="col-3">
+                    <img class="img-responsive" src="file://fs/Onda/AX5DOCS/@(a.EmplTable[0].DocuRef[0].DocuValue[0].FileName).jpg" />
+                </div>
+                <div class="col-9">
+                    <table>
+                        <tr>
+                            <td>
+                                <b>@a.Name</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @a.EmplTable[0].Title
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @a.EmplTable[0].CalendarId
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+</div>

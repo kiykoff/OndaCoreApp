@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+//using DirPartyTableService;
 using Microsoft.AspNetCore.Mvc;
 using OndaCore.Models;
-using static OndaCore.Models.AxaptaModel;
+using PartyTableCustom;
+
 
 namespace OndaCore.Controllers
 {
@@ -19,18 +21,21 @@ namespace OndaCore.Controllers
         
         public IActionResult About()
         {
-            //ViewBag.Entity = AxaptaModel.RunserviceOnHandAsync();
-            // ViewBag.ItemName = AxaptaModel.RunserviceOnHandAsync();
 
-            ViewBag.SalesId = AxaptaModel.Create();
+            // ViewBag.SalesId = AxaptaModel.Create();
+            ViewBag.str = PBAModel.Test();
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
-            ViewBag.Entity = AxaptaModel.RunserviceOnHandAsync();
-            return View();
+            ViewData["Message"] = "Наши менеджеры готовы ответить на любые вопросы. Вы можете связаться с нами одним из указанных способов.";
+            // ViewBag.Entity = AxaptaModel.RunserviceOnHandAsync();
+            // EntityKey[] employee = EmplModel.FindKeys();
+            AxdDirPartyTableCustom table = EmplModel.Find() ;
+            return View(table);
+
+
         }
 
         public IActionResult Privacy()
