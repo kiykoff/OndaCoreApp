@@ -68,6 +68,10 @@ input, select, textarea {
 	appearance: none;
 }
 
+.d-block {
+    max-height: 430px;
+}
+
 /* Basic */
 
 	html {
