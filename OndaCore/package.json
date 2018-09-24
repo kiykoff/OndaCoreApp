@@ -6,6 +6,6 @@
     "jquery": "3.2.1",
     "bootstrap": "4.0.0",
     "popper.js": "1.14.4",
-    "font-awesome": "4.6.3"
+    "@fortawesome/fontawesome-free": "5.3.1"
   }
 }

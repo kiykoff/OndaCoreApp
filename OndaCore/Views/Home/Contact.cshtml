@@ -1,39 +1,59 @@
-﻿@model PartyTableCustom.AxdDirPartyTableCustom
-    
-@ViewData["Title"] = "Контакты";
+﻿@model EmplModel.Employee[]
+
+
+        @{ ViewData["Title"] = "Контакты"; }
 
 <div id="page-wrapper">
     <h2>@ViewData["Title"]</h2>
     <h4>@ViewData["Message"]</h4>
-    <img class="img-responsive" src="http://files.etna.com.ru/Source/_Picture/Olfry/Rot/n018684.jpg" />
-    <div class="container">
-        @foreach (PartyTableCustom.AxdEntity_DirPartyTable a in Model.DirPartyTable)
-        {
 
+    <div class="container">
+        @foreach (EmplModel.Employee a in Model)
+        {
+          @if (a.name != null)
+           {
             <div class="row" id="employee">
                 <div class="col-3">
-                    <img class="img-responsive" src="file://fs/Onda/AX5DOCS/@(a.EmplTable[0].DocuRef[0].DocuValue[0].FileName).jpg" />
+                    <img class="img-fluid" src="http://files.etna.com.ru/AX5DOCS/@(a.FileName).@(a.FileType)" />
                 </div>
                 <div class="col-9">
                     <table>
                         <tr>
                             <td>
-                                <b>@a.Name</b>
+                                <b>@a.name</b>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                @a.EmplTable[0].Title
+                                График работы: @a.calendar
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                @a.EmplTable[0].CalendarId
+                                @a.title
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="far fa-envelope"></i>
+                                <a href="mailto:@a.Email" target="_blank">@a.Email</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fas fa-mobile-alt"></i>
+                                <a href="tel:@a.CellularPhone" target="_blank">@a.CellularPhone</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fas fa-phone-square"></i> @a.PhoneLocal
                             </td>
                         </tr>
                     </table>
                 </div>
             </div>
+           }
         }
     </div>
 </div>

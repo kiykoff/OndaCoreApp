@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -30,9 +31,9 @@ namespace OndaCore.Controllers
         public IActionResult Contact()
         {
             ViewData["Message"] = "Наши менеджеры готовы ответить на любые вопросы. Вы можете связаться с нами одним из указанных способов.";
-            // ViewBag.Entity = AxaptaModel.RunserviceOnHandAsync();
-            // EntityKey[] employee = EmplModel.FindKeys();
-            AxdDirPartyTableCustom table = EmplModel.Find() ;
+            EmplModel EmplModel = new EmplModel();
+            EmplModel.Employee[] table = EmplModel.FindPersonsContactInfo();
+                     
             return View(table);
 
 
