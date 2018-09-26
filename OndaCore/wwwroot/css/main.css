@@ -2498,12 +2498,17 @@ input, select, textarea {
 		.button.small {
 			font-size: 0.8em;
 		}
-
+/*highlights*/
+        #highlights{
+        max-height: 16em;
+        padding-top: 2em;
+        
+                       
+}
 /* Box */
-
-	.box.highlight {
-		text-align: center;
-	}
+.box.highlight {
+    text-align: center;
+}
 
 	.box.post {
 		position: relative;
@@ -2879,6 +2884,13 @@ input, select, textarea {
 #thumbnail {
     padding: 0 0 0 0;
     margin: 0 0 0 0;
+
+}
+
+
+
+div.mySlides > img  {
+    height: 500px;
 }
 .row:after {
     content: "";
@@ -3087,10 +3099,19 @@ input, select, textarea {
 		/* Box */
 
 			.box.highlight {
-				text-align: left;
-				position: relative;
+				text-align:center;
+                position: relative;
 				padding-left: 7em;
 			}
+
+            .box.highlight h3 {
+                font-size: 1em;
+                position:center;
+            }
+            
+            .box.highlight p {
+                display:none;
+            }
 
 				.box.highlight i {
 					position: absolute;
