@@ -30,7 +30,7 @@ namespace OndaCore.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Наши менеджеры готовы ответить на любые вопросы. Вы можете связаться с нами одним из указанных способов.";
+            ViewData["Message"] = "Свяжитесь с нами, ответим на любые вопросы!";
             EmplModel EmplModel = new EmplModel();
             EmplModel.Employee[] table = EmplModel.FindPersonsContactInfo();
                      

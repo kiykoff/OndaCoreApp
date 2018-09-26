@@ -1,59 +1,72 @@
 ﻿@model EmplModel.Employee[]
 
 
-        @{ ViewData["Title"] = "Контакты"; }
+        @{ ViewData["Title"] = "Контакты";
+            Layout = "~/Views/Shared/_Layout.cshtml";
+         }
 
-<div id="page-wrapper">
-    <h2>@ViewData["Title"]</h2>
-    <h4>@ViewData["Message"]</h4>
 
-    <div class="container">
+
+<div class="container">
+  <div id="page-wrapper">
+        <h2>
+            @ViewData["Title"]
+            <small class="text-muted">@ViewData["Message"]</small>
+        </h2>
+        
         @foreach (EmplModel.Employee a in Model)
         {
-          @if (a.name != null)
-           {
-            <div class="row" id="employee">
-                <div class="col-3">
-                    <img class="img-fluid" src="http://files.etna.com.ru/AX5DOCS/@(a.FileName).@(a.FileType)" />
+            @if (a.name != null)
+            {
+                <div id="empl" class="card">
+                    <div class="card-body">
+                        <div class="row" id="employee">
+                            <div class="col-3">
+                                <img class="img-fluid" src="http://files.etna.com.ru/AX5DOCS/@(a.FileName).@(a.FileType)" />
+                            </div>
+                            <div class="col-9">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <b>@a.name</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            @a.title
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            График работы: @a.calendar
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="card-link">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <i class="far fa-envelope"></i>
+                                                <a href="mailto:@a.Email" target="_blank">@a.Email</a>
+                                            </td>
+                                            <td>
+                                                <i class="fas fa-phone-square"></i> @a.PhoneLocal
+                                            </td>
+                                            <td>
+                                                <i class="fas fa-mobile-alt"></i>
+                                                <a href="tel:@a.CellularPhone" target="_blank">@a.CellularPhone</a>
+                                            </td>
+
+                                        </tr>
+                                    </table>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-9">
-                    <table>
-                        <tr>
-                            <td>
-                                <b>@a.name</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                График работы: @a.calendar
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                @a.title
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <i class="far fa-envelope"></i>
-                                <a href="mailto:@a.Email" target="_blank">@a.Email</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <i class="fas fa-mobile-alt"></i>
-                                <a href="tel:@a.CellularPhone" target="_blank">@a.CellularPhone</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <i class="fas fa-phone-square"></i> @a.PhoneLocal
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-           }
+            }
         }
     </div>
 </div>

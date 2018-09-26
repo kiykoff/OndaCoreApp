@@ -247,9 +247,13 @@ input, select, textarea {
 
     div #employee.row {
 
-        padding-top : 1em;
-        padding-bottom: 1em;
-        
+       
+
+    }
+
+    #empl.card {
+
+    margin-bottom: 0.5em;
 
     }
 
@@ -2573,6 +2577,24 @@ input, select, textarea {
     background-image: url("images/bg01.png");
 }
 
+#carouselCountertop:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.5em;
+    background-color: #4FB7E1;
+    background-image: url("images/bg01.png");
+}
+
+#sec1:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.1em;
+    background-color: #4FB7E1;
+    background-image: url("images/bg01.png");
+}
+
 		#nav > ul {
 			margin: 0;
 		}
@@ -2782,6 +2804,106 @@ input, select, textarea {
 			vertical-align: middle;
 			margin-left: 1em;
 		}
+
+/*OurProjectsGallery*/
+
+/* Position the image container (needed to position the left and right arrows) */
+.proj_container {
+
+    position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#projNext, #projPrev {
+    color: white;
+    border-bottom: 0;
+}
+
+ 
+/* Position the "next button" to the right */
+.next {
+    right: 20px;
+    border-radius: 3px 0 0 3px;
+}
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 16px 16px;
+    color: white;
+}
+
+#thumbnail {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Six columns side by side */
+.column {
+    float: left;
+    width: 16.66%;
+    padding: 0 0 0 0;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+    opacity: 0.6;
+}
+
+    .active,
+    .demo:hover {
+        opacity: 1;
+    }
+
+/*end of OurProjectsGallery*/
 
 /* Footer */
 
@@ -3369,5 +3491,5 @@ input, select, textarea {
                 height: 180px;
             }
       
-
+        
 	}

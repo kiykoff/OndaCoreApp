@@ -27,10 +27,37 @@
     </environment>
 </head>
 <body>
-    
+
     <partial name="_CookieConsentPartial" />
 
     <div class="container body-content">
+        <nav id="nav">
+            <ul id="navheader">
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Главная</a></li>
+                <li>
+                    <a href="#">Рассчитать</a>
+                    <ul>
+                        <li>
+                            <a href="#">Ступени</a>
+                            <ul>
+                                <li><a href="#">Стандарт</a></li>
+                                <li><a href="#">Техно</a></li>
+                                <li><a href="#">Евро</a></li>
+                                <li><a href="#">Double</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Столешница</a></li>
+                        <li><a href="#">Мозаика</a></li>
+                        <li><a href="#">Модульное панно</a></li>
+                    </ul>
+                </li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Изделия</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Материалы</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Контакты</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="About">О компании</a></li>
+            </ul>
+        </nav>
+
         @RenderBody()
         <hr />
         <footer>
@@ -40,6 +67,7 @@
 
     <environment include="Development">
         <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="~/js/jquery.min.js"></script>
         <script src="~/js/util.js"></script>
         <script src="~/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="~/node_modules/fontawesome-free/js/all.js"></script>
@@ -49,7 +77,7 @@
         <script src="~/js/jquery.dropotron.min.js"></script>
         <script src="~/js/site.js"></script>
         <script src="~/js/main.js"></script>
-                          
+
         <script src="~/js/site.js" asp-append-version="true"></script>
 
     </environment>
@@ -78,7 +106,7 @@
         <script src="~/js/site.js"></script>
         <script src="~/js/main.js"></script>
 
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
 
     @RenderSection("Scripts", required: false)

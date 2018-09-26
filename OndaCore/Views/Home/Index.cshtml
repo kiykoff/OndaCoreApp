@@ -9,35 +9,6 @@
 
         <!-- Header -->
         <!-- Nav -->
-        <nav id="nav">
-            <ul id="navheader">
-                <li class="current"><a href="index.html">Главная</a></li>
-                <li>
-                    <a href="#">Рассчитать</a>
-                    <ul>
-                        <li>
-                            <a href="#">Ступени</a>
-                            <ul>
-                                <li><a href="#">Стандарт</a></li>
-                                <li><a href="#">Техно</a></li>
-                                <li><a href="#">Евро</a></li>
-                                <li><a href="#">Double</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Столешница</a></li>
-                        <li><a href="#">Мозаика</a></li>
-                        <li><a href="#">Модульное панно</a></li>
-                    </ul>
-                </li>
-
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">Материалы</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="About">О компании</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Контакты</a></li>
-
-            </ul>
-        </nav>
-
-
         <!-- Banner
     <section id="banner">
         <header>
@@ -76,8 +47,8 @@
                         <p><a href="#" class="button">В галлерею</a></p>
                     </div>
                 </div>
-                
-               
+
+
             </div>
             <a class="carousel-control-prev" href="#carouselCountertop" role="button" data-slide-to="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -90,7 +61,7 @@
         </div>
 
 
-        <section class="wrapper style1">
+        <section id="sec1" class="wrapper style1">
             <div class="container">
                 <div class="row">
                     <section class="col-6 col-12-narrower">
@@ -159,6 +130,73 @@
                             <p>Отправьте рекламацию, и мы сделаем все возможное для того чтобы устранить проблему</p>
                         </div>
                     </section>
+                </div>
+            </div>
+        </section>
+        <!--Our Projects-->
+        <section class="wrapper style1">
+            <div class="proj_container">
+
+                <!-- Full-width images with number text -->
+                <div class="mySlides">
+                    <div class="numbertext">1 / 6</div>
+                    <img src="~/images/projects/img_woods_wide.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">2 / 6</div>
+                    <img src="~/images/projects/img_5terre_wide.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">3 / 6</div>
+                    <img src="~/images/projects/img_mountains_wide.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">4 / 6</div>
+                    <img src="~/images/projects/img_lights_wide.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">5 / 6</div>
+                    <img src="~/images/projects/img_nature_wide.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">6 / 6</div>
+                    <img src="~/images/projects/img_snow_wide.jpg" style="width:100%">
+                </div>
+
+                <!-- Next and previous buttons -->
+                <a id="projPrev" class="prev" >&#10094;</a>
+                <a id="projNext" class="next" >&#10095;</a>
+
+                <!-- Image text -->
+                <div class="caption-container">
+                    <p id="caption"></p>
+                </div>
+
+                <!-- Thumbnail images -->
+                <div id = "thumbnail" class="row">
+                    <div class="column">
+                        <img class="demo active" src="~/images/projects/img_woods.jpg" style="width:100%" data-n ="1" alt="The Woods">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="~/images/projects/img_5terre.jpg" style="width:100%" data-n ="2" alt="Cinque Terre">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="~/images/projects/img_mountains.jpg" style="width:100%" data-n ="3" alt="Mountains and fjords">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="~/images/projects/img_lights.jpg" style="width:100%" data-n ="4" alt="Northern Lights">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="~/images/projects/img_nature.jpg" style="width:100%" data-n ="5" alt="Nature and sunrise">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="~/images/projects/img_snow.jpg" style="width:100%" data-n ="6" alt="Snowy Mountains">
+                    </div>
                 </div>
             </div>
         </section>
