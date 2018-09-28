@@ -18,7 +18,6 @@ namespace OndaCore.Controllers
         {
             return View();
         }
-
         
         public IActionResult About()
         {
@@ -35,8 +34,6 @@ namespace OndaCore.Controllers
             EmplModel.Employee[] table = EmplModel.FindPersonsContactInfo();
                      
             return View(table);
-
-
         }
 
         public IActionResult Privacy()
