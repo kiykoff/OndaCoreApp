@@ -17,5 +17,10 @@ namespace OndaCore.Controllers
         {
             return View();
         }
+
+        public IActionResult Paper()
+        {
+            return View();
+        }
     }
 }

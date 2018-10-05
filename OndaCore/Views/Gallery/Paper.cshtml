@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+    @{
+        ViewData["Title"] = "Paper";
+    }
+    <script type="text/javascript" src="~/node_modules/paper/dist/paper-full.min.js"></script>
+    <script type="text/paperscript" src="~/js/PaperScript.js" canvas="myCanvas"></script>
+    </head>
+
+    <body>
+        <div>
+            <span>Some content</span>
+        </div>
+         <canvas style="border:solid 1px black;" id="myCanvas" height="300" width="400" resize></canvas>
+    </body>
+</html>
