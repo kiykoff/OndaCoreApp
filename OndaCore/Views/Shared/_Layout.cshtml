@@ -61,7 +61,29 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2018 - Onda-Group @DateTime.Now.ToLongDateString()</p>
+            <div class="row">
+                <div class="col-4">
+                    <h5>Мы в социальных сетях:</h5>
+                    <!-- Icons -->
+                    <ul class="icons">
+                        <li><a href="https://www.facebook.com/Onda-Group-463147537360886" target="_blank" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                        <li><a href="https://www.instagram.com/onda_group/" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon fa-vk"><span class="label">Вконтакте</span></a></li>
+                    </ul>
+                    <p class="copyright">&copy; Onda-Group @DateTime.Now.ToShortDateString()</p>
+                </div>
+                <div class="col-8">
+                    <ul class="nav">
+                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Главная</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Расчитать</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Изделия</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Gallery" asp-action="Materials">Материалы</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Контакты</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">О компании</a></li>
+                    </ul>
+                </div>
+            </div>
+            
         </footer>
     </div>
 

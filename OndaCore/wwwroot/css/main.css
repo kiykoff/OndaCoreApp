@@ -116,7 +116,6 @@ body, input, select, textarea {
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
 		color: #37c0fb;
 		text-decoration: none;
-		border-bottom: dotted 1px;
 	}
 
 		a:hover {
@@ -2168,13 +2167,13 @@ body, input, select, textarea {
 			.icon.major:before {
 				font-size: 2em;
 			}
-.box.highlight > p {
-    padding-top: 1em;
-    font-size: 1em;
-    position: center;
-    width: 13.75em;
-    margin: 0 1em 1em 1em;
-}
+        .box.highlight > p {
+            padding-top: 1em;
+            font-size: 0.8em;
+            position: center;
+            width: 15em;
+            margin: 0 1em 1em 2.3em;
+        }
 /* Lists */
 ol {
     list-style: decimal;
@@ -2208,11 +2207,11 @@ ol {
 
 /* Icons */
 
-	ul.icons {
-		cursor: default;
-		list-style: none;
-		padding-left: 0;
-	}
+        ul.icons {
+            cursor: default;
+            list-style: none;
+            padding-left: 0;
+        }
 
 		ul.icons li {
 			display: inline-block;
@@ -2224,10 +2223,12 @@ ol {
 				padding-left: 0;
 			}
 
-			ul.icons li a, ul.icons li span {
-				font-size: 2em;
-				border: 0;
-			}
+            ul.icons li a, ul.icons li span {
+                font-size: 1.5em;
+                border: 0;
+                color: #32ACE1;
+                
+            }
 
 /* Menu */
 
@@ -2540,6 +2541,8 @@ ol {
 			margin: 0;
 		}
 
+        
+
 /* Header */
 
 	#header {
@@ -2767,10 +2770,26 @@ ol {
 		padding: 5em 0 3em 0;
 	}
 
-		section.wrapper.style1 {
-			background: #fff;
+        #projects {
+            background-color: black;
+            padding-top: 1em;
+            padding-bottom: 3.2em;
             
-		}
+        }
+            #projects h2 {
+                color: #c0c0c0;
+                padding-top: 0.8em;
+                padding-bottom: 0.3em;
+            }
+            #projects > div > div.caption-container p {
+                color: #c0c0c0;
+                margin-bottom: 0;
+            }
+            #logos {
+                padding-bottom: 0;
+                margin-bottom: 0.1em;
+                padding-top: 0;
+            }
 
 		.wrapper.style2 {
 			background-color: #fff;
@@ -2798,12 +2817,39 @@ ol {
 					color: #37c0fb !important;
 				}
 
-/* CTA */
+        #materialsLogo > img {
+            border: 1px solid black;
+        }
 
-	#cta {
-		text-align: center;
-		padding: 3.5em 0;
-	}
+        .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+        }
+
+        #materialsLogo {
+            background-color: #F2F2F2;
+            
+
+        }
+
+    #materialsLogo > .row {
+        padding: 0.5em 0.3em 2em 0.3em;
+    }
+
+            #materialsLogo > div div a img:hover {
+                width: 105%;
+                height: 105%;
+                box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+                
+            }
+
+
+
+    /* CTA */
+    #cta {
+        text-align: center;
+        padding: 3.5em 0;
+    }
 
 		#cta header h2 {
 			display: inline-block;
@@ -2913,7 +2959,7 @@ div.mySlides > img  {
 
 /* Add a transparency effect for thumnbail images */
 .demo {
-    opacity: 0.6;
+    opacity: 0.3;
 }
 
     .active,
@@ -2961,115 +3007,157 @@ div.mySlides > img  {
 			margin-top: 1.5em;
 			text-align: center;
 			font-size: 0.9em;
+            text-align:center;
 		}
 
-/* Wide */
-
-	@media screen and (max-width: 1680px) {
-
-		/* Basic */
-
-			body, input, select, textarea {
-				font-size: 14pt;
-				line-height: 1.5em;
-			}
-
-		/* Banner */
-
-			#banner {
-				height: 24em;
-			}
-
-	}
-
-/* Normal */
-
-	@media screen and (max-width: 1280px) {
-
-		/* Basic */
-
-			body, input, select, textarea {
-				font-size: 13pt;
-				line-height: 1.5em;
-			}
-
-		/* Lists */
-
-			ol {
-				padding-left: 1.25em;
-			}
-
-				ol li {
-					padding-left: 0.25em;
-				}
-
-		/* Icons */
-
-			ul.icons li a, ul.icons li span {
-				font-size: 1.5em;
-			}
-
-		/* Header */
-
-			#header {
-				padding: 2em 0 0 0;
-			}
-
-				#header h1 {
-					padding: 0 0 1.75em 0;
-				}
-
-		/* Banner */
-
-			#banner {
-				height: 20em;
-			}
-
-		/* Wrapper */
-
-			.wrapper {
-				padding: 3em 0 1em 0;
-			}
-
-		/* CTA */
-
-			#cta {
-				padding: 2em 0;
-			}
-
-		/* Footer */
-
-			#footer {
-				padding: 3em 0 3em 0;
-			}
-
-				#footer .container {
-					margin-bottom: 1em;
-				}
-
-	}
-
-/* Narrow */
-
-	@media screen and (max-width: 980px) {
-
-		/* Basic */
-
-			body, input, select, textarea {
-				font-size: 12pt;
-				line-height: 1.5em;
-			}
-
-        .icon.major {
-            width: 4em;
-            height: 4em;
+        p.copyright {
+            font-size: 0.8em;
         }
 
-	}
+a.nav-link {
+    padding-top: 0;
+    padding-bottom: 0;
+    color: #c0c0c0;
+}
 
-/* Narrower */
+    a.nav-link:hover {
+        color: white;
+    }
 
-	#navPanel, #titleBar {
+    footer {
+        background-color: #333;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        color: #c0c0c0;
+    }
+
+        footer div.row {
+            margin: 0 0 0 0;
+            padding: 0.5em 0 0 0;
+
+
+        }
+
+        footer > div.row {
+            padding-top: 0;
+
+        }
+footer > div > div.col-4 {
+    padding-top: 1.2em;
+}
+
+
+/* Wide */
+@media screen and (max-width: 1680px) {
+    /* Basic */
+    body, input, select, textarea {
+            font-size: 14pt;
+            line-height: 1.5em;
+        }
+
+        /* Banner */
+
+        #banner {
+            height: 24em;
+        }
+    }
+    /* Normal */
+    @media screen and (max-width: 1280px) {
+
+        /* Basic */
+
+        body, input, select, textarea {
+            font-size: 13pt;
+            line-height: 1.5em;
+        }
+
+        .box.highlight > p {
+            font-size: 0.8em;
+            
+        }
+
+        /* Lists */
+
+        ol {
+            padding-left: 1.25em;
+        }
+
+            ol li {
+                padding-left: 0.25em;
+            }
+
+        /* Icons */
+
+        ul.icons li a, ul.icons li span {
+            font-size: 1.5em;
+        }
+
+        /* Header */
+
+        #header {
+            padding: 2em 0 0 0;
+        }
+
+            #header h1 {
+                padding: 0 0 1.75em 0;
+            }
+
+        /* Banner */
+
+        #banner {
+            height: 20em;
+        }
+
+        /* Wrapper */
+
+        .wrapper {
+            padding: 3em 0 1em 0;
+        }
+
+        /* CTA */
+
+        #cta {
+            padding: 2em 0;
+        }
+
+        /* Footer */
+
+        #footer {
+            padding: 3em 0 3em 0;
+        }
+
+            #footer .container {
+                margin-bottom: 1em;
+            }
+    }
+    @media screen and (max-width: 992px) {
+
+        .box.highlight > p {
+            font-size: 0.7em;
+        }
+
+    }
+    /* Narrow */
+    @media screen and (max-width: 980px) {
+
+        /* Basic */
+
+        body, input, select, textarea {
+            font-size: 12pt;
+            line-height: 1.5em;
+        }
+
+        .icon.major {
+            width: 3.5em;
+            height: 3.5em;
+        }
+
+        .box.highlight > p {
+            font-size: 0.7em;
+        }
+    }
+    /* Narrower */
+    #navPanel, #titleBar {
 		display: none;
 	}
 
@@ -3110,31 +3198,23 @@ div.mySlides > img  {
 		/* Box */
 
         .icon.major {
-            width: 3em;
-            height: 3em;
+            width: 2.5em;
+            height: 2.5em;
+            font-size: 1.5em;
+            line-height: 2.5em;
         }
 
-			.box.highlight {
-				text-align:center;
-                position: relative;
-				padding-left: 7em;
-			}
+        .icon.major::before {
+            font-size: 1.4em;
+        }
 
-            .box.highlight h3 {
-                font-size: 1em;
-                position:center;
-            }
-            
+			
             .box.highlight p {
                 display:none;
             }
 
-				.box.highlight i {
-					position: absolute;
-					margin: 0;
-					left: 0;
-					top: 0.25em;
-				}
+					
+
 
 			.box.post .inner {
 				margin-left: calc(20% + 2em);
@@ -3150,6 +3230,10 @@ div.mySlides > img  {
 				display: none;
 			}
 
+            #nav {
+                display: none;
+            }
+
 		/* Banner */
 
 			#banner {
@@ -3164,11 +3248,11 @@ div.mySlides > img  {
 					margin: 1em 0 0 0;
 				}
 
-		/* CTA */
-
-			#cta {
-				padding: 1.5em 0;
-			}
+        
+        /* CTA */
+        #cta {
+            padding: 1.5em 0;
+        }
 
 				#cta header h2 {
 					display: block;
@@ -3200,6 +3284,8 @@ div.mySlides > img  {
 					#footer form .actions li:first-child {
 						padding-left: 0;
 					}
+
+            
 
 		/* Nav */
 
