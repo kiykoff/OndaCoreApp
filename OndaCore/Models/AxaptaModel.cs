@@ -51,12 +51,8 @@ namespace OndaCore.Models
 
         public static async Task<InventOnhandDimServiceFindKeysResponse> Find(InventOnHandDimService.QueryCriteria queryCriteria)
         {
-
             InventOnhandDimServiceClient client = new InventOnhandDimServiceClient();
-
             return await client.findKeysAsync(queryCriteria);
-
-
         }
 
 
@@ -67,36 +63,24 @@ namespace OndaCore.Models
                 AxdSalesOrder order = new AxdSalesOrder();
                 SalesSalesOrderService.AxdEntity_InventDim inventDim = new SalesSalesOrderService.AxdEntity_InventDim();
                 SalesSalesOrderService.EntityKey[] keys = { new SalesSalesOrderService.EntityKey() }; 
-            
-            
-            
 
                 inventDim.InventSiteId = "001";
-                
 
                 line.ItemId = "001002";
                 line.SalesQty = 42;
                 line.SalesUnit = "шт.";
                 line.InventDim = new SalesSalesOrderService.AxdEntity_InventDim[] { inventDim };
-            
-
-
 
             table.CustAccount = "000138";
                 table.PurchOrderFormNum = "xyz";
                 table.ReceiptDateRequested = DateTime.Now.Date;
                 table.SalesLine = new AxdEntity_SalesLine[] { line };
 
-            
             order.SalesTable = new AxdEntity_SalesTable[] { table };
-
-          
-
 
             keys = Call(order).Result.EntityKeyList;
 
             return keys[0].KeyData[0].Value;
-
             
             }
 
@@ -106,8 +90,6 @@ namespace OndaCore.Models
             SalesOrderServiceClient client = new SalesOrderServiceClient();
             AppContext.SetSwitch("System.Net.Http.UseSocketsHttpHandler", false);
             return await client.createAsync(order);
-
-
         }
 
     }

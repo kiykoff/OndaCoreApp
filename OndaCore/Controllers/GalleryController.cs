@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using OndaCore.Models;
+
+
+
 
 namespace OndaCore.Controllers
 {
@@ -10,15 +14,13 @@ namespace OndaCore.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            ImageGalleryModel ImageGalleryModel = new ImageGalleryModel();
+            AxdWebGalleryStruct structure = ImageGalleryModel.GetProductStruct();
+            return View(structure);
+            
         }
 
         public IActionResult Materials()
-        {
-            return View();
-        }
-
-        public IActionResult Paper()
         {
             return View();
         }

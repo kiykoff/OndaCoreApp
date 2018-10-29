@@ -2509,9 +2509,19 @@ ol {
 #highlights {
     max-height: 11em;
     padding-top: 1em;
+    padding-bottom: 0;
     border-bottom: 1px solid #37c0fb;
     background-color: #F2F2F2;
 }
+
+    #highlights::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 0.2em;
+        background-color: #4FB7E1;
+        background-image: url("images/bg01.png");
+    }
 /* Box */
 .box.highlight {
     text-align: center;
@@ -2600,6 +2610,14 @@ ol {
     background-image: url("images/bg01.png");
 }
 
+#sec1 {
+    padding: 2em 0 0 0;
+    background-color: rgb(184, 228, 255);
+}
+h2.secTitle {
+
+    text-align: center;
+}
 #sec1:after {
     content: '';
     display: block;
@@ -2607,6 +2625,14 @@ ol {
     height: 0.1em;
     background-color: #4FB7E1;
     background-image: url("images/bg01.png");
+}
+
+div.box post > img:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 		#nav > ul {
@@ -2773,12 +2799,14 @@ ol {
         #projects {
             background-color: black;
             padding-top: 1em;
-            padding-bottom: 3.2em;
+            padding-bottom: 0em;
             
         }
+
+            
             #projects h2 {
                 color: #c0c0c0;
-                padding-top: 0.8em;
+                padding-top: 0.3em;
                 padding-bottom: 0.3em;
             }
             #projects > div > div.caption-container p {
@@ -2790,6 +2818,14 @@ ol {
                 margin-bottom: 0.1em;
                 padding-top: 0;
             }
+        #logos::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 0.4em;
+            background-color: #4FB7E1;
+            background-image: url("images/bg01.png");
+        }
 
 		.wrapper.style2 {
 			background-color: #fff;
@@ -2822,7 +2858,7 @@ ol {
         }
 
         .column img {
-            margin-top: 8px;
+            margin-top: 0;
             vertical-align: middle;
         }
 
@@ -2837,10 +2873,12 @@ ol {
     }
 
             #materialsLogo > div div a img:hover {
-                width: 105%;
-                height: 105%;
+                -webkit-transform: scale(1.2);
+                -moz-transform: scale(1.2);
+                -o-transform: scale(1.2);
+                -ms-transform: scale(1.2);
+                transform: scale(1.2);
                 box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
-                
             }
 
 
@@ -2934,7 +2972,7 @@ ol {
 }
 
 #thumbnail {
-    padding: 0 0 0 0;
+    padding: 0 0 3em 0;
     margin: 0 0 0 0;
 
 }
@@ -2944,11 +2982,7 @@ ol {
 div.mySlides > img  {
     height: 500px;
 }
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+
 
 /* Six columns side by side */
 .column {
@@ -3005,12 +3039,21 @@ div.mySlides > img  {
 		#footer .copyright {
 			color: #999;
 			margin-top: 1.5em;
-			text-align: center;
 			font-size: 0.9em;
             text-align:center;
+            
 		}
 
-        p.copyright {
+footer > div > div.col-8 {
+    padding-top: 1.8em;
+}
+
+p.copyright {
+    font-size: 0.8em;
+    margin-bottom: 0;
+}
+
+        h5.social {
             font-size: 0.8em;
         }
 
@@ -3034,23 +3077,24 @@ a.nav-link {
         footer div.row {
             margin: 0 0 0 0;
             padding: 0.5em 0 0 0;
-
-
         }
 
         footer > div.row {
             padding-top: 0;
 
         }
-footer > div > div.col-4 {
-    padding-top: 1.2em;
-}
+    footer > div > div.col-4 {
+        padding-top: 0;
+    }
 
+    footer > div.row > p {
+        padding-bottom: 0;
+    }
 
-/* Wide */
-@media screen and (max-width: 1680px) {
-    /* Basic */
-    body, input, select, textarea {
+    /* Wide */
+    @media screen and (max-width: 1680px) {
+        /* Basic */
+        body, input, select, textarea {
             font-size: 14pt;
             line-height: 1.5em;
         }
@@ -3076,6 +3120,8 @@ footer > div > div.col-4 {
             
         }
 
+
+
         /* Lists */
 
         ol {
@@ -3090,8 +3136,12 @@ footer > div > div.col-4 {
 
         ul.icons li a, ul.icons li span {
             font-size: 1.5em;
+            
         }
 
+        ul.icons {
+            margin-bottom: 0.2em;
+        }
         /* Header */
 
         #header {
