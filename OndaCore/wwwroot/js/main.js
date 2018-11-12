@@ -1,8 +1,3 @@
-/*
-	Arcana by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 (function($) {
 
@@ -62,16 +57,31 @@
 					side: 'left',
 					target: $body,
 					visibleClass: 'navPanel-visible'
+                });
+
+    //Аккордеон
+
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
         });
-
-
+    }
     //Current
     $("#navheader > li > a").hover(function () {
 
            
             $(this.parentElement).addClass("current");
     }); 
-
+   
     $("#navheader > li > a").mouseleave(function () {
 
         $("#navheader > li.current").removeClass("current");
@@ -96,7 +106,7 @@
     $("#thumbnail img").click(function currentSlide() {
         showSlides(slideIndex = $(this).data('n'));
     });
-
+    
     function showSlides(n) {
         var i;
         var slides = document.getElementsByClassName("mySlides");
@@ -113,7 +123,15 @@
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
         captionText.innerHTML = dots[slideIndex - 1].alt;
+        
+
     }
+
+   
+    
+
+    
+    
 
 
 })(jQuery);

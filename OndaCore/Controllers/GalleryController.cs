@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GalleryStructService;
 using Microsoft.AspNetCore.Mvc;
 using OndaCore.Models;
 
@@ -15,14 +16,18 @@ namespace OndaCore.Controllers
         public IActionResult Index()
         {
             ImageGalleryModel ImageGalleryModel = new ImageGalleryModel();
-            AxdWebGalleryStruct structure = ImageGalleryModel.GetProductStruct();
-            return View(structure);
             
+            return View(ImageGalleryModel.GetProductStruct());
+
         }
 
-        public IActionResult Materials()
+        [HttpGet]
+        public IActionResult Index (int id)
         {
-            return View();
+            ImageGalleryModel ImageGalleryModel = new ImageGalleryModel();
+
+            return View(ImageGalleryModel.GetProductStruct(id));
+            
         }
     }
 }

@@ -48,6 +48,7 @@ namespace OndaCore
             {
                 //app.UseExceptionHandler("/Home/Error");
                 app.UseDeveloperExceptionPage();
+                System.Net.ServicePointManager.DefaultConnectionLimit = 200;
                 app.UseHsts();
             }
 
