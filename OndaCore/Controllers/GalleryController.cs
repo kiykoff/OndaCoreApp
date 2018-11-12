@@ -22,12 +22,19 @@ namespace OndaCore.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index (int id)
+        public IActionResult Index (string id)
         {
             ImageGalleryModel ImageGalleryModel = new ImageGalleryModel();
 
             return View(ImageGalleryModel.GetProductStruct(id));
             
+        }
+
+        [HttpGet]
+        public IActionResult Items(string id)
+        {
+            ViewData["id"] = id;
+            return PartialView("Items");
         }
     }
 }

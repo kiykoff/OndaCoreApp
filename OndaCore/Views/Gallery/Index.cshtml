@@ -1,34 +1,25 @@
-﻿@model GalleryStructService.AxdWebGalleryStruct
+﻿@model GalleryStructService.AxdEntity_InventProductGroup
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div id="accord" class="col-3">
-   @for (int top = 0; top < Model.InventProductGroup.Length; top++)
+   @for (int top = 0; top < Model.InventGroupBOM.Length; top++)
     {
-        <button class="accordion"><span>@Model.InventProductGroup[top].ProductGroupId</span></button>
+        <button class="accordion"><span>@Model.InventGroupBOM[top].ChildProductGroupId</span></button>
 
-       @if (Model.InventProductGroup[top].InventGroupBOM != null)
+       @if (Model.InventGroupBOM[top].InventGroupChild != null)
         {
             <div class="panel">
-               @for (int bom = 0; bom < Model.InventProductGroup[top].InventGroupBOM.Length; bom++)
+               @for (int bom = 0; bom < Model.InventGroupBOM[top].InventGroupChild.Length; bom++)
                 {
-                    <p><a asp-controller="" asp-action="">@Model.InventProductGroup[top].InventGroupBOM[bom].ChildProductGroupId</a></p>
-                   @if (Model.InventProductGroup[top].InventGroupBOM[bom].InventGroupChild != null)
-                    {
-                        <div class="panel">
-                           @for (int child = 0; child < Model.InventProductGroup[top].InventGroupBOM[bom].InventGroupChild.Length; child++)
-                            {
-                                <p><a asp-controller="" asp-action="">@Model.InventProductGroup[top].InventGroupBOM[bom].InventGroupChild[child].ChildProductGroupId</a></p>
-                            }
-
-                        </div>
-                    }
-
+                    <p><a asp-controller="Gallery" asp-action="Items/@Model.InventGroupBOM[top].InventGroupChild[bom].ChildProductGroupId">@Model.InventGroupBOM[top].InventGroupChild[bom].ChildProductGroupId</a></p>
                 }
             </div>
-
         }
     }
+</div>
+<div class="col-9">
+    @{await Html.RenderPartialAsync("Items",Model,ViewData)}
 </div>
