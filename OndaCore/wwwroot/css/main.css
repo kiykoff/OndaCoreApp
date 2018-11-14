@@ -72,11 +72,13 @@ input, select, textarea {
     max-height: 430px;
 }
 
+#cookieConsent > div > div.collapse.navbar-collapse {
+    display: block;
+}
 /* Basic */
-
-	html {
-		box-sizing: border-box;
-	}
+html {
+    box-sizing: border-box;
+}
 
     section .wrapper.style1 {
         padding-top: 2em;
@@ -2522,6 +2524,61 @@ ol {
         background-color: #4FB7E1;
         background-image: url("images/bg01.png");
     }
+
+ /*Fixed sidenav*/
+.sidenav {
+    width: 150px;
+    position: absolute;
+    z-index: 2;
+    /* top: 64px;
+    left: 397px;*/
+    background: #eee;
+    overflow-x: hidden;
+    padding: 0 0 0 0;
+}
+
+
+
+.cardsarea {
+    margin-left: 155px; /* Same as the width of the sidenav */
+    font-size: 14px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+#ItemCards {
+    padding: 1px 1px 1px 1px;
+
+}
+/* #ItemCards:hover {
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+        box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+    }*/
+#ItemsContainer {
+    margin-top: 0;
+}
+
+#item > div > div:nth-child(3) > button {
+    /* width: 81px;
+    height: 24.5px;*/
+    font-size: 14px;
+}
+#item > div > div:nth-child(3){
+    text-align:center;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 10px;
+        }
+}
 /* Box */
 .box.highlight {
     text-align: center;

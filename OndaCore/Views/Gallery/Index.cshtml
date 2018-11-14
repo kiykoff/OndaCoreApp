@@ -3,23 +3,25 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<div id="accord" class="col-3">
-   @for (int top = 0; top < Model.InventGroupBOM.Length; top++)
-    {
-        <button class="accordion"><span>@Model.InventGroupBOM[top].ChildProductGroupId</span></button>
-
-       @if (Model.InventGroupBOM[top].InventGroupChild != null)
+<div class="sidenav">
+    <div id="accord">
+        @for (int top = 0; top < Model.InventGroupBOM.Length; top++)
         {
-            <div class="panel">
-               @for (int bom = 0; bom < Model.InventGroupBOM[top].InventGroupChild.Length; bom++)
-                {
-                    <p><a asp-controller="Gallery" asp-action="Items/@Model.InventGroupBOM[top].InventGroupChild[bom].ChildProductGroupId">@Model.InventGroupBOM[top].InventGroupChild[bom].ChildProductGroupId</a></p>
-                }
-            </div>
+            <button class="accordion"><span>@Model.InventGroupBOM[top].ChildProductGroupId</span></button>
+
+            @if (Model.InventGroupBOM[top].InventGroupChild != null)
+            {
+                <div class="panel">
+                    @for (int bom = 0; bom < Model.InventGroupBOM[top].InventGroupChild.Length; bom++)
+                    {
+                        <p><a asp-controller="Gallery" asp-action="Items/@Model.InventGroupBOM[top].InventGroupChild[bom].ChildProductGroupId">@Model.InventGroupBOM[top].InventGroupChild[bom].ChildProductGroupId</a></p>
+                    }
+                </div>
+            }
         }
-    }
+    </div>
 </div>
-<div class="col-9">
-    @{await Html.RenderPartialAsync("Items", Model, ViewData);}
+<div class="cardsarea">
+    @{await Html.RenderPartialAsync("Items", Model);}
 </div>
+
