@@ -1,36 +1,104 @@
-﻿@model GalleryStructService.AxdEntity_InventProductGroup
-
-<div id="ItemsContainer" class="row">
-   @for (int i = 0; i < Model.InventGroupBOM.Length; i++)
+﻿@model GalleryStructService.AxdEntity_SecondLevelGroup[]
+@if (ViewBag.id == "all")
+{
+    foreach (GalleryStructService.AxdEntity_ItemLevelGroup item in Model[2].ThirdLevelGroup)
     {
 
-        <div id ="ItemCards" class="col-4">
-            <div id="item" class="card">
-                <div class="card-body">
-                    <div>
-                        <img class="img-fluid" src="~/images/double.svg">
-                    </div>
-                    <div>
-                        <table>
-                            <tr>
-                                <th>
-                                    <span>Ном-ра</span>
-                                </th>
-                                <th>
-                                    <span>Цена</span>
-                                </th>
-                                <th>
-                                    <span>Ед.изм</span>
-                                </th>
-                        </table>
-                    </div>
-                    <div>
-                        <button class="button">Подробнее</button>
+    }
+
+
+    @for (int i = 0; i < Model.Length; i++)
+    {
+        
+    }
+}
+
+@for (int i = 0; i < Model.Length; i++)
+{
+    @if (Model[i].ThirdLevelGroup != null)
+    {
+
+        foreach (GalleryStructService.AxdEntity_ThirdLevelGroup a in Model[i].ThirdLevelGroup)
+        {
+            @if (a.ChildProductGroupId == ViewBag.id)
+            {
+                if (a.FourthLevelGroup != null)
+                {
+                    for (int level = 0; level < a.FourthLevelGroup.Length; level++)
+                    {
+                        for (int item = 0; item < a.FourthLevelGroup[level].ItemLevelGroup.Length; item++)
+                        {
+                            <div id="ItemCards" class="col-4">
+                                <div id="item" class="card">
+                                    <div class="card-body">
+                                        <div>
+                                            <img class="img-fluid" src="~/images/double.svg">
+                                        </div>
+                                        <div>
+                                            <table>
+                                                <tr>
+                                                    <th>
+                                                        <span>@a.FourthLevelGroup[level].ItemLevelGroup[item].ItemId</span>
+                                                    </th>
+                                                    <th>
+                                                        <span>Цена</span>
+                                                    </th>
+                                                    <th>
+                                                        <span>Ед.изм</span>
+                                                    </th>
+                                            </table>
+                                        </div>
+                                        <div>
+                                            <button class="button">Подробнее</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    }
+                }
+
+
+            }
+        }
+    }
+
+}
+
+<!--
+   @* <div id="ItemsContainer" class="row">
+        @for (int i = 0; i < Model.SecondLevelGroup.Length; i++)
+        {
+
+            <div id="ItemCards" class="col-4">
+                <div id="item" class="card">
+                    <div class="card-body">
+                        <div>
+                            <img class="img-fluid" src="~/images/double.svg">
+                        </div>
+                        <div>
+                            <table>
+                                <tr>
+                                    <th>
+                                        <span>Ном-ра</span>
+                                    </th>
+                                    <th>
+                                        <span>Цена</span>
+                                    </th>
+                                    <th>
+                                        <span>Ед.изм</span>
+                                    </th>
+                            </table>
+                        </div>
+                        <div>
+                            <button class="button">Подробнее</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
-    }
-</div>
+        }*@
+    </div>
+-->

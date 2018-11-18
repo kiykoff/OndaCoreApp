@@ -31,9 +31,9 @@ namespace OndaCore.Controllers
         }
 
         [HttpGet]
-        public IActionResult Items(string id)
+        public IActionResult Items(string id = "all")
         {
-            ViewData["id"] = id;
+            ViewBag.id = id;
             return PartialView("Items");
         }
     }

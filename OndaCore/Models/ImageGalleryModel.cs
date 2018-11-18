@@ -9,13 +9,13 @@ namespace OndaCore.Models
     public class ImageGalleryModel
     {
 
-        public AxdEntity_InventProductGroup GetProductStruct(string area = "")
+        public AxdEntity_FirstLevelGroup GetProductStruct(string area = "")
         {
             QueryCriteria queryCriteria = new QueryCriteria();
             CriteriaElement[] criteria = { new CriteriaElement()};
             AxdWebGalleryStruct structure = new AxdWebGalleryStruct();
 
-            AxdEntity_InventProductGroup ProductGroup = new AxdEntity_InventProductGroup();
+            AxdEntity_FirstLevelGroup ProductGroup = new AxdEntity_FirstLevelGroup();
 
             string range = "";
 
@@ -32,7 +32,7 @@ namespace OndaCore.Models
                 }
               
 
-            criteria[0].DataSourceName = "InventProductGroup";
+            criteria[0].DataSourceName = "FirstLevelGroup";
             criteria[0].FieldName = "ProductGroupType";
             criteria[0].Operator = Operator.Equal;
             criteria[0].Value1 = "0";
@@ -52,7 +52,7 @@ namespace OndaCore.Models
                 throw;
             }
 
-            foreach(AxdEntity_InventProductGroup a in structure.InventProductGroup)
+            foreach(AxdEntity_FirstLevelGroup a in structure.FirstLevelGroup)
             {
                 if (a.ProductGroupId == range)
                 {
@@ -66,6 +66,11 @@ namespace OndaCore.Models
             }
 
             return ProductGroup;
+
+        }
+
+        public void GetItemsInfo ()
+        {
 
         }
 

@@ -263,7 +263,7 @@ namespace GalleryStructService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/WebGalleryStruct")]
-    public partial class AxdEntity_InventGroupItem
+    public partial class AxdEntity_ItemLevelGroup
     {
         
         private string inventDimIdField;
@@ -286,7 +286,7 @@ namespace GalleryStructService
         
         private bool actionFieldSpecified;
         
-        public AxdEntity_InventGroupItem()
+        public AxdEntity_ItemLevelGroup()
         {
             this.classField = "entity";
         }
@@ -455,7 +455,7 @@ namespace GalleryStructService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/WebGalleryStruct")]
-    public partial class AxdEntity_InventGroupChild
+    public partial class AxdEntity_FourthLevelGroup
     {
         
         private string childProductGroupIdField;
@@ -470,7 +470,7 @@ namespace GalleryStructService
         
         private bool recVersionFieldSpecified;
         
-        private AxdEntity_InventGroupItem[] inventGroupItemField;
+        private AxdEntity_ItemLevelGroup[] itemLevelGroupField;
         
         private string classField;
         
@@ -478,7 +478,7 @@ namespace GalleryStructService
         
         private bool actionFieldSpecified;
         
-        public AxdEntity_InventGroupChild()
+        public AxdEntity_FourthLevelGroup()
         {
             this.classField = "entity";
         }
@@ -568,16 +568,16 @@ namespace GalleryStructService
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("InventGroupItem", Order=4)]
-        public AxdEntity_InventGroupItem[] InventGroupItem
+        [System.Xml.Serialization.XmlElementAttribute("ItemLevelGroup", Order=4)]
+        public AxdEntity_ItemLevelGroup[] ItemLevelGroup
         {
             get
             {
-                return this.inventGroupItemField;
+                return this.itemLevelGroupField;
             }
             set
             {
-                this.inventGroupItemField = value;
+                this.itemLevelGroupField = value;
             }
         }
         
@@ -628,7 +628,7 @@ namespace GalleryStructService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/WebGalleryStruct")]
-    public partial class AxdEntity_InventGroupBOM
+    public partial class AxdEntity_ThirdLevelGroup
     {
         
         private string childProductGroupIdField;
@@ -643,7 +643,7 @@ namespace GalleryStructService
         
         private bool recVersionFieldSpecified;
         
-        private AxdEntity_InventGroupChild[] inventGroupChildField;
+        private AxdEntity_FourthLevelGroup[] fourthLevelGroupField;
         
         private string classField;
         
@@ -651,7 +651,7 @@ namespace GalleryStructService
         
         private bool actionFieldSpecified;
         
-        public AxdEntity_InventGroupBOM()
+        public AxdEntity_ThirdLevelGroup()
         {
             this.classField = "entity";
         }
@@ -741,16 +741,189 @@ namespace GalleryStructService
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("InventGroupChild", Order=4)]
-        public AxdEntity_InventGroupChild[] InventGroupChild
+        [System.Xml.Serialization.XmlElementAttribute("FourthLevelGroup", Order=4)]
+        public AxdEntity_FourthLevelGroup[] FourthLevelGroup
         {
             get
             {
-                return this.inventGroupChildField;
+                return this.fourthLevelGroupField;
             }
             set
             {
-                this.inventGroupChildField = value;
+                this.fourthLevelGroupField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string @class
+        {
+            get
+            {
+                return this.classField;
+            }
+            set
+            {
+                this.classField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public AxdEnum_AxdEntityAction action
+        {
+            get
+            {
+                return this.actionField;
+            }
+            set
+            {
+                this.actionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool actionSpecified
+        {
+            get
+            {
+                return this.actionFieldSpecified;
+            }
+            set
+            {
+                this.actionFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/WebGalleryStruct")]
+    public partial class AxdEntity_SecondLevelGroup
+    {
+        
+        private string childProductGroupIdField;
+        
+        private string parentProductGroupIdField;
+        
+        private System.Nullable<long> recIdField;
+        
+        private bool recIdFieldSpecified;
+        
+        private System.Nullable<int> recVersionField;
+        
+        private bool recVersionFieldSpecified;
+        
+        private AxdEntity_ThirdLevelGroup[] thirdLevelGroupField;
+        
+        private string classField;
+        
+        private AxdEnum_AxdEntityAction actionField;
+        
+        private bool actionFieldSpecified;
+        
+        public AxdEntity_SecondLevelGroup()
+        {
+            this.classField = "entity";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string ChildProductGroupId
+        {
+            get
+            {
+                return this.childProductGroupIdField;
+            }
+            set
+            {
+                this.childProductGroupIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string ParentProductGroupId
+        {
+            get
+            {
+                return this.parentProductGroupIdField;
+            }
+            set
+            {
+                this.parentProductGroupIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<long> RecId
+        {
+            get
+            {
+                return this.recIdField;
+            }
+            set
+            {
+                this.recIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RecIdSpecified
+        {
+            get
+            {
+                return this.recIdFieldSpecified;
+            }
+            set
+            {
+                this.recIdFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<int> RecVersion
+        {
+            get
+            {
+                return this.recVersionField;
+            }
+            set
+            {
+                this.recVersionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RecVersionSpecified
+        {
+            get
+            {
+                return this.recVersionFieldSpecified;
+            }
+            set
+            {
+                this.recVersionFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ThirdLevelGroup", Order=4)]
+        public AxdEntity_ThirdLevelGroup[] ThirdLevelGroup
+        {
+            get
+            {
+                return this.thirdLevelGroupField;
+            }
+            set
+            {
+                this.thirdLevelGroupField = value;
             }
         }
         
@@ -941,7 +1114,7 @@ namespace GalleryStructService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/WebGalleryStruct")]
-    public partial class AxdEntity_InventProductGroup
+    public partial class AxdEntity_FirstLevelGroup
     {
         
         private string _DocumentHashField;
@@ -964,7 +1137,7 @@ namespace GalleryStructService
         
         private bool recVersionFieldSpecified;
         
-        private AxdEntity_InventGroupBOM[] inventGroupBOMField;
+        private AxdEntity_SecondLevelGroup[] secondLevelGroupField;
         
         private string classField;
         
@@ -972,7 +1145,7 @@ namespace GalleryStructService
         
         private bool actionFieldSpecified;
         
-        public AxdEntity_InventProductGroup()
+        public AxdEntity_FirstLevelGroup()
         {
             this.classField = "entity";
         }
@@ -1118,16 +1291,16 @@ namespace GalleryStructService
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("InventGroupBOM", Order=7)]
-        public AxdEntity_InventGroupBOM[] InventGroupBOM
+        [System.Xml.Serialization.XmlElementAttribute("SecondLevelGroup", Order=7)]
+        public AxdEntity_SecondLevelGroup[] SecondLevelGroup
         {
             get
             {
-                return this.inventGroupBOMField;
+                return this.secondLevelGroupField;
             }
             set
             {
-                this.inventGroupBOMField = value;
+                this.secondLevelGroupField = value;
             }
         }
         
@@ -1203,7 +1376,7 @@ namespace GalleryStructService
         
         private string senderIdField;
         
-        private AxdEntity_InventProductGroup[] inventProductGroupField;
+        private AxdEntity_FirstLevelGroup[] firstLevelGroupField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
@@ -1248,16 +1421,16 @@ namespace GalleryStructService
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("InventProductGroup", Order=2)]
-        public AxdEntity_InventProductGroup[] InventProductGroup
+        [System.Xml.Serialization.XmlElementAttribute("FirstLevelGroup", Order=2)]
+        public AxdEntity_FirstLevelGroup[] FirstLevelGroup
         {
             get
             {
-                return this.inventProductGroupField;
+                return this.firstLevelGroupField;
             }
             set
             {
-                this.inventProductGroupField = value;
+                this.firstLevelGroupField = value;
             }
         }
     }
@@ -1353,15 +1526,15 @@ namespace GalleryStructService
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<GalleryStructService.WebGalleryStructServiceReadResponse> readAsync(GalleryStructService.WebGalleryStructServiceReadRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WebGalleryStructService/findKeys", ReplyAction="http://tempuri.org/WebGalleryStructService/findKeysResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(GalleryStructService.AifFault), Action="http://tempuri.org/WebGalleryStructService/findKeysAifFaultFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<GalleryStructService.WebGalleryStructServiceFindKeysResponse> findKeysAsync(GalleryStructService.WebGalleryStructServiceFindKeysRequest request);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WebGalleryStructService/find", ReplyAction="http://tempuri.org/WebGalleryStructService/findResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(GalleryStructService.AifFault), Action="http://tempuri.org/WebGalleryStructService/findAifFaultFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<GalleryStructService.WebGalleryStructServiceFindResponse> findAsync(GalleryStructService.WebGalleryStructServiceFindRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WebGalleryStructService/findKeys", ReplyAction="http://tempuri.org/WebGalleryStructService/findKeysResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(GalleryStructService.AifFault), Action="http://tempuri.org/WebGalleryStructService/findKeysAifFaultFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<GalleryStructService.WebGalleryStructServiceFindKeysResponse> findKeysAsync(GalleryStructService.WebGalleryStructServiceFindKeysRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1550,6 +1723,48 @@ namespace GalleryStructService
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="WebGalleryStructServiceFindRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class WebGalleryStructServiceFindRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria")]
+        public GalleryStructService.QueryCriteria QueryCriteria;
+        
+        public WebGalleryStructServiceFindRequest()
+        {
+        }
+        
+        public WebGalleryStructServiceFindRequest(GalleryStructService.QueryCriteria QueryCriteria)
+        {
+            this.QueryCriteria = QueryCriteria;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="WebGalleryStructServiceFindResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class WebGalleryStructServiceFindResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/WebGalleryStruct", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/WebGalleryStruct")]
+        public GalleryStructService.AxdWebGalleryStruct WebGalleryStruct;
+        
+        public WebGalleryStructServiceFindResponse()
+        {
+        }
+        
+        public WebGalleryStructServiceFindResponse(GalleryStructService.AxdWebGalleryStruct WebGalleryStruct)
+        {
+            this.WebGalleryStruct = WebGalleryStruct;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="WebGalleryStructServiceFindKeysRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
     public partial class WebGalleryStructServiceFindKeysRequest
     {
@@ -1587,48 +1802,6 @@ namespace GalleryStructService
         public WebGalleryStructServiceFindKeysResponse(GalleryStructService.EntityKey[] EntityKeyList)
         {
             this.EntityKeyList = EntityKeyList;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="WebGalleryStructServiceFindRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
-    public partial class WebGalleryStructServiceFindRequest
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://schemas.microsoft.com/dynamics/2006/02/documents/QueryCriteria")]
-        public GalleryStructService.QueryCriteria QueryCriteria;
-        
-        public WebGalleryStructServiceFindRequest()
-        {
-        }
-        
-        public WebGalleryStructServiceFindRequest(GalleryStructService.QueryCriteria QueryCriteria)
-        {
-            this.QueryCriteria = QueryCriteria;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="WebGalleryStructServiceFindResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
-    public partial class WebGalleryStructServiceFindResponse
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/WebGalleryStruct", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/WebGalleryStruct")]
-        public GalleryStructService.AxdWebGalleryStruct WebGalleryStruct;
-        
-        public WebGalleryStructServiceFindResponse()
-        {
-        }
-        
-        public WebGalleryStructServiceFindResponse(GalleryStructService.AxdWebGalleryStruct WebGalleryStruct)
-        {
-            this.WebGalleryStruct = WebGalleryStruct;
         }
     }
     
@@ -1696,19 +1869,6 @@ namespace GalleryStructService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<GalleryStructService.WebGalleryStructServiceFindKeysResponse> GalleryStructService.WebGalleryStructService.findKeysAsync(GalleryStructService.WebGalleryStructServiceFindKeysRequest request)
-        {
-            return base.Channel.findKeysAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<GalleryStructService.WebGalleryStructServiceFindKeysResponse> findKeysAsync(GalleryStructService.QueryCriteria QueryCriteria)
-        {
-            GalleryStructService.WebGalleryStructServiceFindKeysRequest inValue = new GalleryStructService.WebGalleryStructServiceFindKeysRequest();
-            inValue.QueryCriteria = QueryCriteria;
-            return ((GalleryStructService.WebGalleryStructService)(this)).findKeysAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<GalleryStructService.WebGalleryStructServiceFindResponse> GalleryStructService.WebGalleryStructService.findAsync(GalleryStructService.WebGalleryStructServiceFindRequest request)
         {
             return base.Channel.findAsync(request);
@@ -1719,6 +1879,19 @@ namespace GalleryStructService
             GalleryStructService.WebGalleryStructServiceFindRequest inValue = new GalleryStructService.WebGalleryStructServiceFindRequest();
             inValue.QueryCriteria = QueryCriteria;
             return ((GalleryStructService.WebGalleryStructService)(this)).findAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<GalleryStructService.WebGalleryStructServiceFindKeysResponse> GalleryStructService.WebGalleryStructService.findKeysAsync(GalleryStructService.WebGalleryStructServiceFindKeysRequest request)
+        {
+            return base.Channel.findKeysAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<GalleryStructService.WebGalleryStructServiceFindKeysResponse> findKeysAsync(GalleryStructService.QueryCriteria QueryCriteria)
+        {
+            GalleryStructService.WebGalleryStructServiceFindKeysRequest inValue = new GalleryStructService.WebGalleryStructServiceFindKeysRequest();
+            inValue.QueryCriteria = QueryCriteria;
+            return ((GalleryStructService.WebGalleryStructService)(this)).findKeysAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

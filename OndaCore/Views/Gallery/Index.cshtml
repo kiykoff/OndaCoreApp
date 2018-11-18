@@ -1,27 +1,39 @@
-﻿@model GalleryStructService.AxdEntity_InventProductGroup
+﻿@model GalleryStructService.AxdEntity_FirstLevelGroup
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="sidenav">
     <div id="accord">
-        @for (int top = 0; top < Model.InventGroupBOM.Length; top++)
+       @for (int second = 0; second < Model.SecondLevelGroup.Length; second++)
         {
-            <button class="accordion"><span>@Model.InventGroupBOM[top].ChildProductGroupId</span></button>
+            <button class="accordion"><span>@Model.SecondLevelGroup[second].ChildProductGroupId</span></button>
 
-            @if (Model.InventGroupBOM[top].InventGroupChild != null)
+           @if (Model.SecondLevelGroup[second].ThirdLevelGroup != null)
             {
-                <div class="panel">
-                    @for (int bom = 0; bom < Model.InventGroupBOM[top].InventGroupChild.Length; bom++)
+            <div class="panel">
+               @for (int third = 0; third < Model.SecondLevelGroup[second].ThirdLevelGroup.Length; third++)
+                {
+                    <p><a asp-controller="Gallery" asp-action="Items/@Model.SecondLevelGroup[second].ThirdLevelGroup[third].ChildProductGroupId">@Model.SecondLevelGroup[second].ThirdLevelGroup[third].ChildProductGroupId</a></p>
+
+                   @if (Model.SecondLevelGroup[second].ThirdLevelGroup[third].FourthLevelGroup != null)
                     {
-                        <p><a asp-controller="Gallery" asp-action="Items/@Model.InventGroupBOM[top].InventGroupChild[bom].ChildProductGroupId">@Model.InventGroupBOM[top].InventGroupChild[bom].ChildProductGroupId</a></p>
+                     <div class="subpanel">
+                      @for (int fourth = 0; fourth < Model.SecondLevelGroup[second].ThirdLevelGroup[third].FourthLevelGroup.Length; fourth++)
+                       {
+                          <p><a asp-controller="Gallery" asp-action="Items/@Model.SecondLevelGroup[second].ThirdLevelGroup[third].FourthLevelGroup[fourth].ChildProductGroupId">@Model.SecondLevelGroup[second].ThirdLevelGroup[third].FourthLevelGroup[fourth].ChildProductGroupId</a></p>
+                       }
+                     </div>
+
                     }
-                </div>
+                }
+            </div>
             }
+           
         }
     </div>
 </div>
 <div class="cardsarea">
-    @{await Html.RenderPartialAsync("Items", Model);}
+    @{await Html.RenderPartialAsync("Items", Model.SecondLevelGroup);}
 </div>
 
