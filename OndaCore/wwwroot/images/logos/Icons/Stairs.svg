@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="45mm" height="20mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 2737 1216"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil1 {fill:none}
+    .fil0 {fill:#898989}
+   ]]>
+  </style>
+    <clipPath id="id0">
+     <path d="M0 0l2737 0 0 1216 -2737 0 0 -1216z"/>
+    </clipPath>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1541442208">
+   <polygon class="fil0" points="295,912 832,912 832,608 1368,608 1368,304 1905,304 1905,0 2442,0 2442,304 1905,608 1368,912 832,1216 295,1216 "/>
+   <g>
+   </g>
+   <g style="clip-path:url(#id0)">
+   </g>
+   <polygon class="fil1" points="0,0 2737,0 2737,1216 0,1216 "/>
+  </g>
+ </g>
+</svg>

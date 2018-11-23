@@ -30,7 +30,6 @@ namespace OndaCore.Models
                     default:
                         break;
                 }
-              
 
             criteria[0].DataSourceName = "FirstLevelGroup";
             criteria[0].FieldName = "ProductGroupType";

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="45mm" height="20mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 7931 3525"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:none}
+    .fil2 {fill:#FEFEFE}
+    .fil1 {fill:#898989}
+   ]]>
+  </style>
+    <clipPath id="id0">
+     <path d="M0 0l7931 0 0 3525 -7931 0 0 -3525z"/>
+    </clipPath>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1644301072">
+   <g>
+   </g>
+   <g style="clip-path:url(#id0)">
+   </g>
+   <polygon class="fil0" points="0,0 7931,0 7931,3525 0,3525 "/>
+   <path class="fil1" d="M881 2512l0 -2512 6169 0 0 2512 -1056 0c-276,591 -1170,1013 -2028,1013 -859,0 -1753,-422 -2029,-1013l-1056 0z"/>
+   <ellipse class="fil2" cx="3966" cy="1898" rx="1762" ry="1272"/>
+  </g>
+ </g>
+</svg>

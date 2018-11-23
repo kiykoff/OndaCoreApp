@@ -65,7 +65,7 @@ namespace OndaCore.Models
                 SalesSalesOrderService.EntityKey[] keys = { new SalesSalesOrderService.EntityKey() }; 
 
                 inventDim.InventSiteId = "001";
-
+            
                 line.ItemId = "001002";
                 line.SalesQty = 42;
                 line.SalesUnit = "шт.";

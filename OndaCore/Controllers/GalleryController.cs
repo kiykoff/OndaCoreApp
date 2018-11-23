@@ -7,8 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using OndaCore.Models;
 
 
-
-
 namespace OndaCore.Controllers
 {
     public class GalleryController : Controller
