@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GalleryStructService;
 
+
 namespace OndaCore.Models
 {
     public class ImageGalleryModel
@@ -67,6 +68,7 @@ namespace OndaCore.Models
             return ProductGroup;
 
         }
+
 
         public void GetItemsInfo ()
         {

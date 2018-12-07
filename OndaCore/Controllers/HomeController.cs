@@ -23,7 +23,7 @@ namespace OndaCore.Controllers
         {
 
             // ViewBag.SalesId = AxaptaModel.Create();
-            ViewBag.str = PBAModel.Test();
+          //  ViewBag.str = PBAModel.Test();
             return View();
         }
 

@@ -7,7 +7,7 @@
 // </автоматически создаваемое>
 //------------------------------------------------------------------------------
 
-namespace PBA
+namespace PBACalcSrv
 {
     using System.Runtime.Serialization;
     
@@ -20,7 +20,7 @@ namespace PBA
         
         private string CustomDetailXmlField;
         
-        private PBA.FaultMessageList[] FaultMessageListArrayField;
+        private PBACalcSrv.FaultMessageList[] FaultMessageListArrayField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string CustomDetailXml
@@ -36,7 +36,7 @@ namespace PBA
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public PBA.FaultMessageList[] FaultMessageListArray
+        public PBACalcSrv.FaultMessageList[] FaultMessageListArray
         {
             get
             {
@@ -59,7 +59,7 @@ namespace PBA
         
         private string DocumentOperationField;
         
-        private PBA.FaultMessage[] FaultMessageArrayField;
+        private PBACalcSrv.FaultMessage[] FaultMessageArrayField;
         
         private string FieldField;
         
@@ -102,7 +102,7 @@ namespace PBA
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public PBA.FaultMessage[] FaultMessageArray
+        public PBACalcSrv.FaultMessage[] FaultMessageArray
         {
             get
             {
@@ -244,55 +244,95 @@ namespace PBA
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://tempuri.org", ConfigurationName="PBA.PBAWebService")]
-    public interface PBAWebService
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://tempuri.org", ConfigurationName="PBACalcSrv.PBACalcWebService")]
+    public interface PBACalcWebService
     {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/PBAWebService/test", ReplyAction="http://tempuri.org/PBAWebService/testResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(PBA.AifFault), Action="http://tempuri.org/PBAWebService/testAifFaultFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
-        System.Threading.Tasks.Task<PBA.PBAWebServiceTestResponse> testAsync(PBA.testRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/PBACalcWebService/PBACalculatePrice", ReplyAction="http://tempuri.org/PBACalcWebService/PBACalculatePriceResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(PBACalcSrv.AifFault), Action="http://tempuri.org/PBACalcWebService/PBACalculatePriceAifFaultFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<PBACalcSrv.PBACalcWebServicePBACalculatePriceResponse> PBACalculatePriceAsync(PBACalcSrv.PBACalcWebServicePBACalculatePriceRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/PBACalcWebService/SaveCalculatedQuotation", ReplyAction="http://tempuri.org/PBACalcWebService/SaveCalculatedQuotationResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(PBACalcSrv.AifFault), Action="http://tempuri.org/PBACalcWebService/SaveCalculatedQuotationAifFaultFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task SaveCalculatedQuotationAsync();
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class testRequest
-    {
-        
-        public testRequest()
-        {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="PBAWebServiceTestResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
-    public partial class PBAWebServiceTestResponse
+    [System.ServiceModel.MessageContractAttribute(WrapperName="PBACalcWebServicePBACalculatePriceRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class PBACalcWebServicePBACalculatePriceRequest
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
-        public string response;
+        public string InventTransId;
         
-        public PBAWebServiceTestResponse()
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=1)]
+        public bool isTestMode;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=2)]
+        public double stdMatHight;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=3)]
+        public string stdMatId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=4)]
+        public double stdMatWidht;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=5)]
+        public double stdStepHight;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=6)]
+        public double stdStepWidht;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=7)]
+        public string typeOfStep;
+        
+        public PBACalcWebServicePBACalculatePriceRequest()
         {
         }
         
-        public PBAWebServiceTestResponse(string response)
+        public PBACalcWebServicePBACalculatePriceRequest(string InventTransId, bool isTestMode, double stdMatHight, string stdMatId, double stdMatWidht, double stdStepHight, double stdStepWidht, string typeOfStep)
+        {
+            this.InventTransId = InventTransId;
+            this.isTestMode = isTestMode;
+            this.stdMatHight = stdMatHight;
+            this.stdMatId = stdMatId;
+            this.stdMatWidht = stdMatWidht;
+            this.stdStepHight = stdStepHight;
+            this.stdStepWidht = stdStepWidht;
+            this.typeOfStep = typeOfStep;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="PBACalcWebServicePBACalculatePriceResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class PBACalcWebServicePBACalculatePriceResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public double response;
+        
+        public PBACalcWebServicePBACalculatePriceResponse()
+        {
+        }
+        
+        public PBACalcWebServicePBACalculatePriceResponse(double response)
         {
             this.response = response;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    public interface PBAWebServiceChannel : PBA.PBAWebService, System.ServiceModel.IClientChannel
+    public interface PBACalcWebServiceChannel : PBACalcSrv.PBACalcWebService, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.0.1")]
-    public partial class PBAWebServiceClient : System.ServiceModel.ClientBase<PBA.PBAWebService>, PBA.PBAWebService
+    public partial class PBACalcWebServiceClient : System.ServiceModel.ClientBase<PBACalcSrv.PBACalcWebService>, PBACalcSrv.PBACalcWebService
     {
         
     /// <summary>
@@ -302,49 +342,62 @@ namespace PBA
     /// <param name="clientCredentials">Учетные данные клиента.</param>
     static partial void ConfigureEndpoint(System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Description.ClientCredentials clientCredentials);
         
-        public PBAWebServiceClient() : 
-                base(PBAWebServiceClient.GetDefaultBinding(), PBAWebServiceClient.GetDefaultEndpointAddress())
+        public PBACalcWebServiceClient() : 
+                base(PBACalcWebServiceClient.GetDefaultBinding(), PBACalcWebServiceClient.GetDefaultEndpointAddress())
         {
-            this.Endpoint.Name = EndpointConfiguration.BasicHttpBinding_PBAWebService.ToString();
+            this.Endpoint.Name = EndpointConfiguration.BasicHttpBinding_PBACalcWebService.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public PBAWebServiceClient(EndpointConfiguration endpointConfiguration) : 
-                base(PBAWebServiceClient.GetBindingForEndpoint(endpointConfiguration), PBAWebServiceClient.GetEndpointAddress(endpointConfiguration))
-        {
-            this.Endpoint.Name = endpointConfiguration.ToString();
-            ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
-        }
-        
-        public PBAWebServiceClient(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
-                base(PBAWebServiceClient.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress))
+        public PBACalcWebServiceClient(EndpointConfiguration endpointConfiguration) : 
+                base(PBACalcWebServiceClient.GetBindingForEndpoint(endpointConfiguration), PBACalcWebServiceClient.GetEndpointAddress(endpointConfiguration))
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public PBAWebServiceClient(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(PBAWebServiceClient.GetBindingForEndpoint(endpointConfiguration), remoteAddress)
+        public PBACalcWebServiceClient(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
+                base(PBACalcWebServiceClient.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress))
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public PBAWebServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public PBACalcWebServiceClient(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(PBACalcWebServiceClient.GetBindingForEndpoint(endpointConfiguration), remoteAddress)
+        {
+            this.Endpoint.Name = endpointConfiguration.ToString();
+            ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
+        }
+        
+        public PBACalcWebServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress)
         {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<PBA.PBAWebServiceTestResponse> PBA.PBAWebService.testAsync(PBA.testRequest request)
+        System.Threading.Tasks.Task<PBACalcSrv.PBACalcWebServicePBACalculatePriceResponse> PBACalcSrv.PBACalcWebService.PBACalculatePriceAsync(PBACalcSrv.PBACalcWebServicePBACalculatePriceRequest request)
         {
-            return base.Channel.testAsync(request);
+            return base.Channel.PBACalculatePriceAsync(request);
         }
         
-        public System.Threading.Tasks.Task<PBA.PBAWebServiceTestResponse> testAsync()
+        public System.Threading.Tasks.Task<PBACalcSrv.PBACalcWebServicePBACalculatePriceResponse> PBACalculatePriceAsync(string InventTransId, bool isTestMode, double stdMatHight, string stdMatId, double stdMatWidht, double stdStepHight, double stdStepWidht, string typeOfStep)
         {
-            PBA.testRequest inValue = new PBA.testRequest();
-            return ((PBA.PBAWebService)(this)).testAsync(inValue);
+            PBACalcSrv.PBACalcWebServicePBACalculatePriceRequest inValue = new PBACalcSrv.PBACalcWebServicePBACalculatePriceRequest();
+            inValue.InventTransId = InventTransId;
+            inValue.isTestMode = isTestMode;
+            inValue.stdMatHight = stdMatHight;
+            inValue.stdMatId = stdMatId;
+            inValue.stdMatWidht = stdMatWidht;
+            inValue.stdStepHight = stdStepHight;
+            inValue.stdStepWidht = stdStepWidht;
+            inValue.typeOfStep = typeOfStep;
+            return ((PBACalcSrv.PBACalcWebService)(this)).PBACalculatePriceAsync(inValue);
+        }
+        
+        public System.Threading.Tasks.Task SaveCalculatedQuotationAsync()
+        {
+            return base.Channel.SaveCalculatedQuotationAsync();
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
@@ -359,7 +412,7 @@ namespace PBA
         
         private static System.ServiceModel.Channels.Binding GetBindingForEndpoint(EndpointConfiguration endpointConfiguration)
         {
-            if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_PBAWebService))
+            if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_PBACalcWebService))
             {
                 System.ServiceModel.BasicHttpBinding result = new System.ServiceModel.BasicHttpBinding();
                 result.MaxBufferSize = int.MaxValue;
@@ -375,27 +428,27 @@ namespace PBA
         
         private static System.ServiceModel.EndpointAddress GetEndpointAddress(EndpointConfiguration endpointConfiguration)
         {
-            if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_PBAWebService))
+            if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_PBACalcWebService))
             {
-                return new System.ServiceModel.EndpointAddress("http://ax5-aos1.terracorp.ru:2730/MicrosoftDynamicsAXAif50/pbawebservice.svc");
+                return new System.ServiceModel.EndpointAddress("http://ax5-aos1.terracorp.ru:2730/pbacalcwebservice.svc");
             }
             throw new System.InvalidOperationException(string.Format("Не удалось найти конечную точку с именем \"{0}\".", endpointConfiguration));
         }
         
         private static System.ServiceModel.Channels.Binding GetDefaultBinding()
         {
-            return PBAWebServiceClient.GetBindingForEndpoint(EndpointConfiguration.BasicHttpBinding_PBAWebService);
+            return PBACalcWebServiceClient.GetBindingForEndpoint(EndpointConfiguration.BasicHttpBinding_PBACalcWebService);
         }
         
         private static System.ServiceModel.EndpointAddress GetDefaultEndpointAddress()
         {
-            return PBAWebServiceClient.GetEndpointAddress(EndpointConfiguration.BasicHttpBinding_PBAWebService);
+            return PBACalcWebServiceClient.GetEndpointAddress(EndpointConfiguration.BasicHttpBinding_PBACalcWebService);
         }
         
         public enum EndpointConfiguration
         {
             
-            BasicHttpBinding_PBAWebService,
+            BasicHttpBinding_PBACalcWebService,
         }
     }
 }
